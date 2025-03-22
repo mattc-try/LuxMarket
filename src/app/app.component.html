@@ -1,23 +1,42 @@
 <div class="container">
-  <h1>Items for Sale</h1>
-  <table>
+  <header class="lux-header">
+    <h1>LuxMarket 🇱🇺</h1>
+    <p class="tagline">Connecting Luxembourg with Local Goods & Services</p>
+  </header>
+
+  <div class="mission-statement">
+    <h2>Our Commitment to Luxembourg</h2>
+    <p>Supporting sustainable living and local producers through:</p>
+    <ul>
+      <li>🇱🇺 100% Luxembourg-sourced products</li>
+      <li>🌱 Eco-friendly packaging options</li>
+      <li>💬 Multilingual support (LU/FR/DE/EN/PT)</li>
+    </ul>
+  </div>
+
+  <table class="market-table">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Name</th>
+        <th>Product</th>
         <th>Description</th>
         <th>Price</th>
-        <th>Stock</th>
+        <th>Location</th>
+        <th>Sustainable</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
-        <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.description }}</td>
-        <td>${{ product.price }}</td>
-        <td>{{ product.stock }}</td>
+        <td>€{{ product.price | number:'1.2-2' }}</td>
+        <td>{{ product.location }}</td>
+        <td>{{ product.sustainable ? '♻️ Yes' : 'No' }}</td>
       </tr>
     </tbody>
   </table>
+
+  <footer class="ucd-footer">
+    <p>User-Centered Design Project - University of Luxembourg</p>
+    <p>Matteo Steinbach - BiCS Sem6 UCD Course - March 2025</p>
+  </footer>
 </div>
